@@ -1,9 +1,8 @@
 package com.vinayprabhakarx.classes;
 
-/**
- * Main class demonstrating the usage of Student class
- * This program creates Student objects and demonstrates accessing their
- * properties and methods
+/*Main class demonstrating the usage of Student class
+ This program creates Student objects and demonstrates accessing their
+ properties and methods
  */
 public class Main {
     public static void main(String[] args) {
