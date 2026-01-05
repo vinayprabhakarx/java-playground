@@ -1,4 +1,4 @@
-package com.vinayprabhakarx.oops.encapsulation.classes;
+package com.vinayprabhakarx.oops.classes;
 
 import java.util.Scanner;
 
