@@ -1,4 +1,4 @@
-package com.vinayprabhakarx.encapsulation;
+package com.vinayprabhakarx.oops.encapsulation;
 
 import java.time.LocalDate;
 
