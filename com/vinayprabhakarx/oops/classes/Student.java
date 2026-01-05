@@ -1,4 +1,4 @@
-package com.vinayprabhakarx.classes;
+package com.vinayprabhakarx.oops.encapsulation.classes;
 
 /**
  * Student class represents a student entity with basic properties and behaviors

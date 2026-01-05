@@ -1,4 +1,4 @@
-package com.vinayprabhakarx.classes;
+package com.vinayprabhakarx.oops.encapsulation.classes;
 
 /*Main class demonstrating the usage of Student class
  This program creates Student objects and demonstrates accessing their
