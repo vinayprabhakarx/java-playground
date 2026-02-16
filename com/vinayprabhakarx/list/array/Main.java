@@ -59,6 +59,7 @@ public class Main {
             System.out.println(i);
         }
 
+        //new capacity = old capacity × 1.5
         // Trim size of list
         list1.trimToSize();
 

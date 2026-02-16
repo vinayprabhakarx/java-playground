@@ -1,4 +1,5 @@
 package com.vinayprabhakarx.array;
+import java.util.Arrays;
 import java.util.Scanner;
 
 //Create an integer array of size N and initialize it with user input.
