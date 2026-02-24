@@ -1,4 +1,4 @@
-package com.vinayprabhakarx.oops.encapsulation;
+package com.vinayprabhakarx.functional;
 
 import java.util.Arrays;
 import java.util.List;

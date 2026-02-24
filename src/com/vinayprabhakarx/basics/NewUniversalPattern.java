@@ -1,4 +1,4 @@
-package com.vinayprabhakarx.basics.part1;
+package com.vinayprabhakarx.basics;
 
 import java.util.Scanner;
 

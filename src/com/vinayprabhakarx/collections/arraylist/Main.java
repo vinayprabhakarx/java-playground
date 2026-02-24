@@ -1,4 +1,4 @@
-package com.vinayprabhakarx.collections.arrayList;
+package com.vinayprabhakarx.collections.arraylist;
 
 import java.util.ArrayList;
 import java.util.Arrays;

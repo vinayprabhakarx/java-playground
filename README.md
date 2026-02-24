@@ -16,31 +16,63 @@ Clone or navigate to this directory and start exploring Java examples and exerci
 
 ## Structure
 
-All code is organized under the `com/vinayprabhakarx/` package. New topics and exercises will be added as separate directories within this structure.
+All code is organized under the `com/vinayprabhakarx/` package:
 
 ```
-com/
-└── vinayprabhakarx/
-    ├── basics/
-    └── [more topics to be added...]
+src/com/vinayprabhakarx/
+├── array/              — Array fundamentals, search, sorting, 2D arrays
+├── basics/             — Core Java: arithmetic, control flow, type casting, patterns
+├── collections/        — Java Collections Framework
+│   ├── arraydeque/     — ArrayDeque (double-ended queue)
+│   ├── arraylist/      — ArrayList
+│   ├── hashmap/        — HashMap
+│   ├── hashset/        — HashSet
+│   ├── linkedhashmap/  — LinkedHashMap (insertion-ordered map)
+│   ├── linkedhashset/  — LinkedHashSet (insertion-ordered set)
+│   ├── linkedlist/     — LinkedList
+│   ├── priorityqueue/  — PriorityQueue (min-heap)
+│   ├── stack/          — Stack (LIFO)
+│   ├── treemap/        — TreeMap (sorted map)
+│   ├── treeset/        — TreeSet (sorted set)
+│   └── vector/         — Vector (thread-safe dynamic array)
+├── exceptions/         — Exception handling & custom exceptions
+├── functional/         — Lambda expressions and functional interfaces
+├── generics/           — Generic classes, methods, bounded types
+├── math/               — Mathematical operations and utilities
+├── methods/            — Method design and practice exercises
+├── oops/               — Object-Oriented Programming
+│   ├── classes/        — Class definitions, instances, and fields
+│   ├── encapsulation/  — Access control, getters/setters, data hiding
+│   ├── inheritance/    — Inheritance and method overriding
+│   ├── interfaces/     — Interfaces, abstract classes, default methods
+│   └── polymorphism/   — Method overloading and overriding
+├── recursion/          — Recursive algorithms and patterns
+├── streams/            — Java Streams API (filter, map, reduce, collect)
+├── strings/            — String manipulation and operations
+└── threads/            — Multithreading and concurrency
 ```
 
 ## How to Compile and Run
 
-### Compile a Java file:
+### Compile a single file (from project root):
 
 ```bash
-javac com/vinayprabhakarx/basics/part1/Exercise1.java
+javac -sourcepath src -d out src/com/vinayprabhakarx/<package>/<ClassName>.java
 ```
 
-### Run a compiled Java class:
+### Run a compiled class:
 
 ```bash
-java com.vinayprabhakarx.basics.part1.Exercise1
+java -cp out com.vinayprabhakarx.<package>.<ClassName>
+```
+
+### Compile all sources at once:
+
+```bash
+find src -name "*.java" | xargs javac -sourcepath src -d out
 ```
 
 ## Resources & Learning Sources
 
 - [W3Resource Java Exercises](https://www.w3resource.com/java-exercises/basic/index.php)
-
 - [GeeksforGeeks - Java Programming](https://www.geeksforgeeks.org/java/) — Tutorials, examples, and problem solutions.

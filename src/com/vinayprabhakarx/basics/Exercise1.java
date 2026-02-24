@@ -1,4 +1,4 @@
-package com.vinayprabhakarx.basics.part1;
+package com.vinayprabhakarx.basics;
 
 public class Exercise1 {
     public static void main(String[] args) {
