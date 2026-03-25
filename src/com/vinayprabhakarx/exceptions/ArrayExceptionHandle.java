@@ -7,17 +7,14 @@ import java.util.Scanner;
 public class ArrayExceptionHandle {
 
     public static void main(String[] args) {
+        System.out.println("Connection established!");
         Scanner input = new Scanner(System.in);
 
         try {
             System.out.print("Enter Array Size: ");
             int size = input.nextInt();
 
-            if (size <= 0) {
-                System.out.println("Array size must be positive.");
-                return;
-            }
-
+            System.out.println("Array size must be positive.");
             int[] array = new int[size];
 
             System.out.print("Enter a Value: ");
@@ -34,8 +31,12 @@ public class ArrayExceptionHandle {
             System.out.println("Error: Invalid index. Please enter index within array size.");
         } catch (InputMismatchException e) {
             System.out.println("Error: Please enter valid integer input.");
-        } finally {
+        } catch (NegativeArraySizeException e) {
+            System.out.println("Error: Array size cannot be negative.");
+        }
+        finally {
             input.close();
+            System.out.println("Connection closed!");
         }
     }
 }
