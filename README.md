@@ -14,6 +14,12 @@ This repository serves as a hands-on space to:
 
 Clone or navigate to this directory and start exploring Java examples and exercises.
 
+## IntelliJ IDEA
+
+This project now includes a root `pom.xml`, so IntelliJ IDEA can detect and import it as a Maven Java project directly from the repository root.
+
+If IntelliJ was already opened before `pom.xml` existed, reopen the project from the root folder or use `File > Open` on this repository and choose the Maven import/reload prompt.
+
 ## Structure
 
 All code is organized under the `com/vinayprabhakarx/` package:
