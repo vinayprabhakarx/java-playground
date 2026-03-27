@@ -1,4 +1,4 @@
-package com.vinayprabhakarx.exceptions;
+package com.vinayprabhakarx.exceptions.general;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
