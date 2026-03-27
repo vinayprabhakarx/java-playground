@@ -29,31 +29,30 @@ public class PaymentApp {
                 System.out.println("4. Terminate Session");
                 int option = readMenuOption(sc);
 
-                if (option == 1) {
-                    String upi = readUpiId(sc, server);
-                    double amount = readAmount(sc);
-                    int pin = readPin(sc, server, "Enter PIN to confirm payment: ");
-                    if (pin == -1) {
-                        System.out.println("\nSession terminated.");
+                switch (option) {
+                    case 1:
+                        if (!sendMoney(sc, server)) {
+                            System.out.println("\nSession terminated.");
+                            return;
+                        }
                         break;
-                    }
-
-                    TransactionResult result = server.paymentInitiated(upi, amount, pin);
-
-                    System.out.println("\n----- TRANSACTION STATUS -----");
-                    System.out.println("Status: " + (result.isSuccess() ? "SUCCESS" : "FAILED"));
-                    System.out.println("Message: " + result.getMessage());
-                    System.out.println("Balance: " + result.getBalance());
-                } else if (option == 2) {
-                    System.out.println("\nCurrent Balance: " + server.getBalance());
-                } else if (option == 3) {
-                    if (!changePin(sc, server)) {
-                        System.out.println("\nSession terminated.");
+                    case 2:
+                        if (!checkBalance(sc, server)) {
+                            System.out.println("\nSession terminated.");
+                            return;
+                        }
                         break;
-                    }
-                } else if (option == 4) {
-                    System.out.println("\nSession terminated.");
-                    break;
+                    case 3:
+                        if (!changePin(sc, server)) {
+                            System.out.println("\nSession terminated.");
+                            return;
+                        }
+                        break;
+                    case 4:
+                        System.out.println("\nSession terminated.");
+                        return;
+                    default:
+                        System.out.println("Invalid option. Please enter 1, 2, 3, or 4.");
                 }
             }
         } finally {
@@ -83,6 +82,41 @@ public class PaymentApp {
         }
     }
 
+    private static boolean sendMoney(Scanner sc, UPIServer server) {
+        String upi = readUpiId(sc, server);
+        if (upi.isEmpty()) {
+            return false;
+        }
+
+        double amount = readAmount(sc, server);
+        if (amount == -1) {
+            return false;
+        }
+
+        int pin = readPin(sc, server, "Enter PIN to confirm payment: ");
+        if (pin == -1) {
+            return false;
+        }
+
+        TransactionResult result = server.paymentInitiated(upi, amount, pin);
+
+        System.out.println("\n----- TRANSACTION STATUS -----");
+        System.out.println("Status: " + (result.isSuccess() ? "SUCCESS" : "FAILED"));
+        System.out.println("Message: " + result.getMessage());
+        System.out.println("Balance: " + result.getBalance());
+        return true;
+    }
+
+    private static boolean checkBalance(Scanner sc, UPIServer server) {
+        int pin = readPin(sc, server, "Enter UPI PIN to check balance: ");
+        if (pin == -1) {
+            return false;
+        }
+
+        System.out.println("\nCurrent Balance: " + server.getBalance());
+        return true;
+    }
+
     private static String readUpiId(Scanner sc, UPIServer server) {
         while (true) {
             System.out.print("Enter recipient UPI ID: ");
@@ -108,17 +142,23 @@ public class PaymentApp {
         }
     }
 
-    private static double readAmount(Scanner sc) {
+    private static double readAmount(Scanner sc, UPIServer server) {
         while (true) {
             System.out.print("Enter amount: ");
             if (!sc.hasNextLine()) {
                 System.out.println("\nNo more input. Session terminated.");
-                return 0;
+                return -1;
             }
             String input = sc.nextLine().trim();
 
             try {
-                return Double.parseDouble(input);
+                double amount = Double.parseDouble(input);
+                if (amount <= 0) {
+                    System.out.println("Amount must be greater than zero.");
+                    continue;
+                }
+
+                return amount;
             } catch (NumberFormatException e) {
                 System.out.println("Invalid amount. Please enter a numeric value.");
             }
@@ -139,8 +179,12 @@ public class PaymentApp {
                 System.out.println("PIN verified successfully.");
                 return pin;
             } catch (InvalidPinException e) {
-                System.out.println(e.getMessage());
                 invalidPinAttempts++;
+                int attemptsLeft = MAX_PIN_ATTEMPTS - invalidPinAttempts;
+                System.out.println("Incorrect UPI PIN.");
+                if (attemptsLeft > 0) {
+                    System.out.println("Please try again. Attempts left: " + attemptsLeft);
+                }
             }
         }
 
@@ -157,15 +201,12 @@ public class PaymentApp {
             }
             String input = sc.nextLine().trim();
 
-            try {
-                int pin = Integer.parseInt(input);
-                if (pin >= 1000 && pin <= 9999) {
-                    return pin;
-                }
-                System.out.println("PIN must be a 4-digit number.");
-            } catch (NumberFormatException e) {
+            if (!input.matches("\\d{4}")) {
                 System.out.println("Invalid PIN. Please enter digits only.");
+                continue;
             }
+
+            return Integer.parseInt(input);
         }
     }
 

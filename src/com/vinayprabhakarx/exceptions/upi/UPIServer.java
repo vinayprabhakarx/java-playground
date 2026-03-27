@@ -122,7 +122,7 @@ public class UPIServer {
             throws InvalidPinException, InvalidAmountException {
         UpiUser sender = requireLoggedInUser();
 
-        if (newPin < 1000 || newPin > 9999) {
+        if (newPin < 0 || newPin > 9999) {
             throw new InvalidAmountException("New PIN must be a 4-digit number");
         }
 

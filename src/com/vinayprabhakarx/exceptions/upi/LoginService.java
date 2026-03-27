@@ -70,15 +70,12 @@ public class LoginService {
             }
             String input = sc.nextLine().trim();
 
-            try {
-                int pin = Integer.parseInt(input);
-                if (pin >= 1000 && pin <= 9999) {
-                    return pin;
-                }
-                System.out.println("PIN must be a 4-digit number.");
-            } catch (NumberFormatException e) {
+            if (!input.matches("\\d{4}")) {
                 System.out.println("Invalid PIN. Please enter digits only.");
+                continue;
             }
+
+            return Integer.parseInt(input);
         }
     }
 }
