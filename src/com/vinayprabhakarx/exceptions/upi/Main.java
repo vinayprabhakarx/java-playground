@@ -2,7 +2,7 @@ package com.vinayprabhakarx.exceptions.upi;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main() {
         new PaymentApp().start();
     }
 }
