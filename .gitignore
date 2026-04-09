@@ -54,3 +54,4 @@ dist/
 # Other
 *.class
 *.log
+.codex
