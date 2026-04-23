@@ -8,7 +8,7 @@ import java.io.IOException;
 
 public class TextBasedIO {
     public static void main(String[] args) {
-        String filePath = "src/com/vinayprabhakarx/io/text-data.txt";
+        String filePath = "src/com/vinayprabhakarx/io/file/text-data.txt";
 
         // BufferedWriter writes text efficiently by storing characters in memory before flushing to the file.
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {

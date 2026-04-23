@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public class ByteStream {
     public static void main(String[] args) {
-        String filePath = "src/com/vinayprabhakarx/io/byte-data.bin";
+        String filePath = "src/com/vinayprabhakarx/io/file/byte-data.bin";
 
         // FileOutputStream writes raw byte values to a file.
         try (FileOutputStream outputStream = new FileOutputStream(filePath)) {

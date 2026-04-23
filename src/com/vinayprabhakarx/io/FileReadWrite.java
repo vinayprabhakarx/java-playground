@@ -9,7 +9,7 @@ import java.io.IOException;
 public class FileReadWrite {
 
     public static void main(String[] args) {
-        String fileName = "sample.txt";
+        String fileName = "src/com/vinayprabhakarx/io/file/sample.txt";
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName))) {
             writer.write("Java IO Example");

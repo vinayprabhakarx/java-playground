@@ -8,8 +8,8 @@ import java.io.IOException;
 
 public class BufferedReadWrite {
     public static void main(String[] args) {
-        String inputPath = "src/com/vinayprabhakarx/io/input.txt";
-        String outputPath = "src/com/vinayprabhakarx/io/output.txt";
+        String inputPath = "src/com/vinayprabhakarx/io/file/input.txt";
+        String outputPath = "src/com/vinayprabhakarx/io/file/output.txt";
 
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(inputPath));
              BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(outputPath))) {
