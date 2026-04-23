@@ -6,7 +6,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class ReadWrite {
+public class BufferedReadWrite {
     public static void main(String[] args) {
         String inputPath = "src/com/vinayprabhakarx/io/input.txt";
         String outputPath = "src/com/vinayprabhakarx/io/output.txt";
