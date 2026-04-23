@@ -1,0 +1,2 @@
+BufferedReader: wraps a Reader (typically FileReader or InputStreamReader) and buffers input to reduce expensive I/O calls; provides read(), read(char[]), and readLine().
+BufferedWriter: wraps a Writer (typically FileWriter or OutputStreamWriter) and buffers output; provides write(...), flush(), and newLine().
