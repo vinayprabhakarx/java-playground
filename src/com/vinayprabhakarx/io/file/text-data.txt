@@ -1,0 +1,2 @@
+Line 1: BufferedWriter writes text efficiently.
+Line 2: BufferedReader reads one line at a time.
