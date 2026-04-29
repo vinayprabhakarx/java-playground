@@ -43,6 +43,11 @@ build/
 # Logs
 *.log
 
+# Environment variables
+.env
+.env.*
+!.env.example
+
 # Temporary files
 *.tmp
 *.swp
