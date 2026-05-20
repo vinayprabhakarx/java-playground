@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 5.3//EN"
+        "http://hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+
+        <!-- Database connection settings -->
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/java_playground</property>
+        <property name="hibernate.connection.username">vinayprabhakarx</property>
+
+        <!-- Password is loaded from the .env file in HibernateGuide.java -->
+        <!-- <property name="hibernate.connection.password">your_password</property> -->
+
+        <!-- Automatically create or update database tables from entity classes -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!-- Show generated SQL queries in the console -->
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+
+        <!-- Entity classes managed by Hibernate -->
+        <mapping class="com.vinayprabhakarx.hibernate.pojo.StudentResult"/>
+
+    </session-factory>
+</hibernate-configuration>
