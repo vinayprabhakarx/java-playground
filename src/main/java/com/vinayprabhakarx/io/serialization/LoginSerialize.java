@@ -11,7 +11,7 @@ public class LoginSerialize {
         LoginInfo loginSerialize = new LoginInfo(101, "vinayprabhakarx", "Vinay@123");
         System.out.println(loginSerialize);
 
-        String filePath = "src/com/vinayprabhakarx/io/file/login-info.ser";
+        String filePath = "src/main/resources/com/vinayprabhakarx/io/file/login-info.ser";
         FileOutputStream fileOutputStream = new FileOutputStream(filePath);
         ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
 

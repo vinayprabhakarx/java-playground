@@ -9,7 +9,7 @@ import java.io.ObjectStreamClass;
 
 public class SerialVersionUIDDeserialize {
     public static void main(String[] args) {
-        String filePath = "src/com/vinayprabhakarx/io/file/serial-version-student.ser";
+        String filePath = "src/main/resources/com/vinayprabhakarx/io/file/serial-version-student.ser";
 
         printSerialVersionUID(SerialVersionStudent.class);
 

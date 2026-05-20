@@ -9,7 +9,7 @@ import java.io.ObjectOutputStream;
 
 public class SerialVersionUID {
     public static void main(String[] args) {
-        String filePath = "src/com/vinayprabhakarx/io/file/serial-version-student.ser";
+        String filePath = "src/main/resources/com/vinayprabhakarx/io/file/serial-version-student.ser";
         SerialVersionStudent student = new SerialVersionStudent(101, "Vinay");
 
         System.out.println(student);

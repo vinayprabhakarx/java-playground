@@ -8,7 +8,7 @@ import java.io.IOException;
 
 public class PrimitiveDataIO {
     public static void main(String[] args) {
-        String filePath = "src/com/vinayprabhakarx/io/file/primitive-data.dat";
+        String filePath = "src/main/resources/com/vinayprabhakarx/io/file/primitive-data.dat";
 
         // DataOutputStream writes Java primitive values in binary form.
         try (DataOutputStream outputStream = new DataOutputStream(new FileOutputStream(filePath))) {

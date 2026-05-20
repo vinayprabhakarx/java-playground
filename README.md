@@ -25,7 +25,7 @@ If IntelliJ was already opened before `pom.xml` existed, reopen the project from
 All code is organized under the `com/vinayprabhakarx/` package:
 
 ```
-src/com/vinayprabhakarx/
+src/main/java/com/vinayprabhakarx/
 ├── array/              — Array fundamentals, search, sorting, 2D arrays
 ├── basics/             — Core Java: arithmetic, control flow, type casting, patterns
 ├── collections/        — Java Collections Framework
@@ -44,6 +44,8 @@ src/com/vinayprabhakarx/
 ├── exceptions/         — Exception handling & custom exceptions
 ├── functional/         — Lambda expressions and functional interfaces
 ├── generics/           — Generic classes, methods, bounded types
+├── hibernate/          — Hibernate ORM and entity mapping
+├── jdbc/               — JDBC and MySQL database operations
 ├── math/               — Mathematical operations and utilities
 ├── methods/            — Method design and practice exercises
 ├── oops/               — Object-Oriented Programming
@@ -58,24 +60,30 @@ src/com/vinayprabhakarx/
 └── threads/            — Multithreading and concurrency
 ```
 
+Resources such as text files, serialized files, and configuration files are stored under:
+
+```
+src/main/resources/
+```
+
 ## How to Compile and Run
 
-### Compile a single file (from project root):
+### Compile with Maven:
 
 ```bash
-javac -sourcepath src -d out src/com/vinayprabhakarx/<package>/<ClassName>.java
+mvn compile
 ```
 
-### Run a compiled class:
+### Run a class with Maven:
 
 ```bash
-java -cp out com.vinayprabhakarx.<package>.<ClassName>
+mvn exec:java -Dexec.mainClass=com.vinayprabhakarx.<package>.<ClassName>
 ```
 
-### Compile all sources at once:
+Example:
 
 ```bash
-find src -name "*.java" | xargs javac -sourcepath src -d out
+mvn exec:java -Dexec.mainClass=com.vinayprabhakarx.jdbc.ReadStudent
 ```
 
 ## Resources & Learning Sources

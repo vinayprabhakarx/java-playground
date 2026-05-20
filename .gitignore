@@ -56,7 +56,12 @@ build/
 # Generated distribution
 dist/
 
+# Local assistant/tool state
+/.agents/
+/.codex
+/.codex/
+/.junie/
+
 # Other
 *.class
 *.log
-.codex

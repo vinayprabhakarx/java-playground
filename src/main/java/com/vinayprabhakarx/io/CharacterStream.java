@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public class CharacterStream {
     public static void main(String[] args) {
-        String filePath = "src/com/vinayprabhakarx/io/file/character-data.txt";
+        String filePath = "src/main/resources/com/vinayprabhakarx/io/file/character-data.txt";
 
         // FileWriter writes character data such as letters, spaces, and new lines.
         try (FileWriter writer = new FileWriter(filePath)) {

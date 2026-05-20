@@ -5,8 +5,8 @@ import java.io.IOException;
 
 public class InputOutputMethods {
     public static void main(String[] args) {
-        String filePath = "src/com/vinayprabhakarx/io/file/input.txt";
-        String directoryPath = "src/com/vinayprabhakarx/io/file";
+        String filePath = "src/main/resources/com/vinayprabhakarx/io/file/input.txt";
+        String directoryPath = "src/main/resources/com/vinayprabhakarx/io/file";
 
         File file = new File(filePath);
         File directory = new File(directoryPath);

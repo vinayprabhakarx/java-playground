@@ -7,7 +7,7 @@ Small console-based UPI payment app with login, balance check, send money, and P
 Run the app with:
 
 ```bash
-java -cp src com.vinayprabhakarx.exceptions.upi.Main
+mvn exec:java -Dexec.mainClass=com.vinayprabhakarx.exceptions.upi.Main
 ```
 
 ## Features
